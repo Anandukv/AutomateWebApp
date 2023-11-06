@@ -1,2 +1,2 @@
 # AutomateWebApp
-Automate Web Application using Python and Selenium
+Automate Web Application using Python and Selenium.
