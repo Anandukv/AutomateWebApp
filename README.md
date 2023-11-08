@@ -1,4 +1,4 @@
 # AutomateWebApp
-# This project we will focusing on selenium commands used with their application in web automation.
 Automate Web Application using Python and Selenium.
+Beginner friendly - Simple project that will be focusing on selenium commands used in web automation.
  
