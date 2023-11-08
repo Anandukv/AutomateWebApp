@@ -1,0 +1,60 @@
+class HomePage:
+
+    """
+        This class contains all the locators in Home page
+    """
+
+    name = "//input[@id='name']"
+    email = "//div[@class='form-group']/input[@id='email']"
+    phone = "//input[@class='form-control' and @id ='phone']"
+    address = "//textarea[@id ='textarea']"
+    gender_male = "//input[@id='male' and @type='radio']"
+    gender_female = "//input[@id='female' and @name = 'gender']"
+    day_sunday = "//input[@id='sunday']"
+    day_monday = "//input[@id='monday']"
+    day_tuesday = "//input[@id='tuesday']"
+    day_wednesday = "//input[@id='wednesday']"
+    day_thursday = "//input[@id='thursday']"
+    day_friday = "//input[@id='friday']"
+    day_saturday = "//input[@id='saturday']"
+    country = "//select[@id = 'country']"
+    colours = "//select[@id = 'colors']"
+    date = "//input[@id = 'datepicker']"
+    datepicker = "//table[@class='ui-datepicker-calendar']//a"
+    link_opencart = "open cart"
+    link_orangehrm = "orange HRM"
+    webtable = "//table[@name = 'BookTable']"
+    production_table = "//table[@id= 'productTable']"
+    newwindow = "//button[contains(text(),'New Browser Window')]"
+    alert = "//div[@class = 'widget-content']//following-sibling::button[@onclick='myFunctionAlert()']"
+    confirmationbox = "//div[@class = 'widget-content']//following-sibling::button[@onclick='myFunctionConfirm()']"
+    prompt = "//div[@class = 'widget-content']//following-sibling::button[@onclick='myFunctionPrompt()']"
+    copy_text = "//button[contains(text(),'Copy Text')]"
+    scrolltodrop = "//span[@class = 'ui-slider-handle ui-corner-all ui-state-default']"
+    source = "//*[@id='draggable']/p"
+    target = "//*[@id='droppable']"
+    dragsource = "//div[@id='draggable']//following-sibling::p[contains(text(),'Drag me to my target')]"
+    drop_target = "//div[@id='droppable']//following-sibling::p"
+    slider = "//span[contains(@class,'ui-slider-handle ui-corner-all ui-state-default')]"
+    successmessage = "//*[contains(text(),'Success: You have added')]" #"//*[contains(text(),'Success: You have added')]"
+    item = "//*[contains(text(),'MacBook')]"
+    addtocart = "//button[normalize-space()='Add to Cart']"
+    frame = "//iframe[contains(@id,'frame-one')]"
+    frame_name = "//form[@id='FSForm']//div[@id='q0']/input"
+    frame_male = "//table[@class= 'inline_grid choices']//following-sibling::label[contains(text(),'Male')]"
+    frame_female = "//table[@class= 'inline_grid choices']//following-sibling::label[contains(text(),'Female')]"
+    calender = "//span[@class = 'icon_calendar']"
+    job = "//select[@id= 'RESULT_RadioButton-3']"
+    """
+        jobs - QA Engineer,Automation Engineer,Developer,Manager
+        Countries - United States,Canada,United Kingdom,Germany,France,Australia,Japan,China,Brazil,India 
+    """
+
+
+class OrangeHrmPage:
+
+    """
+        This class contains all the locators in OrangeHRM page
+    """
+    username = "//input[@name='username']"
+    password = "//input[@name='password']"
