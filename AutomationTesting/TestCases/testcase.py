@@ -104,7 +104,7 @@ class TestApplication:
         self.driver.switch_to.window(parent_window_id)
         wait.until(EC.element_to_be_clickable((By.XPATH, HomePage.alert)))
         result = self.driver.find_element(By.XPATH, HomePage.confirmationbox).is_displayed()
-        assert result.__eq__(True)
+        assert result.__eq__(True), "Unable to redirect to the parent window"
         print("Testcase passed ")
 
         def test_login(self):
