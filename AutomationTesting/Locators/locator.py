@@ -56,5 +56,6 @@ class OrangeHrmPage:
     """
         This class contains all the locators in OrangeHRM page
     """
+    orangehrm = "//a[normalize-space()='orange HRM']"
     username = "//input[@name='username']"
     password = "//input[@name='password']"
