@@ -8,9 +8,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
 from Data.testdata import BrowserData, HomePageData
-from Locators.locator import HomePage
+from Locators.locator import HomePage, OrangeHrmPage
 from webdriver_manager.chrome import ChromeDriverManager
-
+from TestCases import XLUtils
 
 class TestApplication:
 
@@ -106,8 +106,45 @@ class TestApplication:
         result = self.driver.find_element(By.XPATH, HomePage.confirmationbox).is_displayed()
         assert result.__eq__(True)
         print("Testcase passed ")
+
+
+            def test_login(self):
+        self.driver.get(BrowserData.url)
+        self.driver.find_element(By.XPATH, "//a[normalize-space()='orange HRM']").click()
+        time.sleep(10)
+
+        path = "..\\Data\\testexceldata.xlsx"
+        rows = XLUtils.getrowcount(path, 'Sheet1')
+
+        for r in range(2, rows + 1):
+            username = XLUtils.readdata(path, "Sheet1", r, 1)
+            password = XLUtils.readdata(path, "Sheet1", r, 2)
+            time.sleep(5)
+            self.driver.implicitly_wait(5)
+            cookie_before = self.driver.get_cookies()[0]['value']
+            self.driver.find_element(By.XPATH, OrangeHrmPage.username).clear()
+            self.driver.find_element(By.XPATH, OrangeHrmPage.username).send_keys(username)
+            self.driver.find_element(By.XPATH, OrangeHrmPage.password).clear()
+            self.driver.find_element(By.XPATH, OrangeHrmPage.password).send_keys(password)
+            self.driver.find_element(By.XPATH,
+                                     "//button[normalize-space(@class) = 'oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']").click()
+            time.sleep(5)
+            self.driver.get_screenshot_as_file("..\\Screenshots\\loginvalidation"+str(r)+".png")
+            cookie_after = self.driver.get_cookies()[0]['value']
+            if cookie_before != cookie_after:
+                print("Login successful")
+                XLUtils.writedata(path, "Sheet1", r, 3, "Login Successful")
+            else:
+
+                print("Login failed")
+                XLUtils.writedata(path, "Sheet1", r, 3, "Login Failed")
+            self.driver.delete_all_cookies()
+            self.driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+            time.sleep(5)
         self.driver.quit()
 
 
-a = TestApplication()
-a.test_sanity()
+test = TestApplication()
+test.test_sanity()
+test.test_login()
+
