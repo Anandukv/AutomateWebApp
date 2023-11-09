@@ -7,7 +7,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
-from Data.testdata import BrowserData, HomePageData
+from Data.testdata import BrowserData, HomePageData, OrangeHrm
 from Locators.locator import HomePage, OrangeHrmPage
 from webdriver_manager.chrome import ChromeDriverManager
 from TestCases import XLUtils
