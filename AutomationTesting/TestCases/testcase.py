@@ -109,7 +109,7 @@ class TestApplication:
 
         def test_login(self):
         self.driver.get(BrowserData.url)
-        self.driver.find_element(By.XPATH, "//a[normalize-space()='orange HRM']").click()
+        self.driver.find_element(By.XPATH, OrangeHrmPage.orangehrm).click()
         time.sleep(10)
         path = "..\\Data\\testexceldata.xlsx"
         rows = XLUtils.getrowcount(path, 'Sheet1')
