@@ -107,12 +107,10 @@ class TestApplication:
         assert result.__eq__(True)
         print("Testcase passed ")
 
-
-            def test_login(self):
+        def test_login(self):
         self.driver.get(BrowserData.url)
         self.driver.find_element(By.XPATH, "//a[normalize-space()='orange HRM']").click()
         time.sleep(10)
-
         path = "..\\Data\\testexceldata.xlsx"
         rows = XLUtils.getrowcount(path, 'Sheet1')
 
@@ -135,7 +133,6 @@ class TestApplication:
                 print("Login successful")
                 XLUtils.writedata(path, "Sheet1", r, 3, "Login Successful")
             else:
-
                 print("Login failed")
                 XLUtils.writedata(path, "Sheet1", r, 3, "Login Failed")
             self.driver.delete_all_cookies()
