@@ -135,7 +135,7 @@ class TestApplication:
                 print("Login failed")
                 XLUtils.writedata(path, "Sheet1", r, 3, "Login Failed")
             self.driver.delete_all_cookies()
-            self.driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+            self.driver.get(OrangeHrm.url)
             time.sleep(5)
         self.driver.quit()
 
