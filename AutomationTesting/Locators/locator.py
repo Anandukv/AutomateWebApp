@@ -59,3 +59,4 @@ class OrangeHrmPage:
     orangehrm = "//a[normalize-space()='orange HRM']"
     username = "//input[@name='username']"
     password = "//input[@name='password']"
+    loginbutton = "//button[normalize-space(@class) = 'oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']"
