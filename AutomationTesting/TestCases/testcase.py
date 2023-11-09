@@ -124,8 +124,7 @@ class TestApplication:
             self.driver.find_element(By.XPATH, OrangeHrmPage.username).send_keys(username)
             self.driver.find_element(By.XPATH, OrangeHrmPage.password).clear()
             self.driver.find_element(By.XPATH, OrangeHrmPage.password).send_keys(password)
-            self.driver.find_element(By.XPATH,
-                                     "//button[normalize-space(@class) = 'oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']").click()
+            self.driver.find_element(By.XPATH, OrangeHrmPage.loginbutton).click()
             time.sleep(5)
             self.driver.get_screenshot_as_file("..\\Screenshots\\loginvalidation"+str(r)+".png")
             cookie_after = self.driver.get_cookies()[0]['value']
